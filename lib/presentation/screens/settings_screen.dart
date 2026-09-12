@@ -353,7 +353,11 @@ class SettingsScreen extends ConsumerWidget {
                   children: <Widget>[
                     SettingsRow(
                       title: l10n.language,
-                      value: prefs.localeCode == 'fa' ? 'فارسی' : 'English',
+                      value: switch (prefs.localeCode) {
+                        'fa' => 'فارسی',
+                        'zh' => '中文',
+                        _ => 'English',
+                      },
                       onTap: () => showChoiceSheet<String>(
                         context: context,
                         title: l10n.language,
@@ -361,6 +365,7 @@ class SettingsScreen extends ConsumerWidget {
                         options: const <PickerOption<String>>[
                           PickerOption(value: 'fa', title: 'فارسی'),
                           PickerOption(value: 'en', title: 'English'),
+                          PickerOption(value: 'zh', title: '中文'),
                         ],
                         onSelected: prefsController.setLocale,
                       ),
