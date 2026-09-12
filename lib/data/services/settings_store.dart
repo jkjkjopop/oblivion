@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/tunnel_settings.dart';
 
-const List<String> supportedLocaleCodes = <String>['en', 'fa'];
+const List<String> supportedLocaleCodes = <String>['en', 'fa', 'zh'];
 
 const String fallbackLocaleCode = 'en';
 
